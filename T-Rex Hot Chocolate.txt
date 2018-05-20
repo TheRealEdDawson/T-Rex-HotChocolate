@@ -1,0 +1,140 @@
+title T-Rex Hot Chocolate
+author Ed & Tommy Dawson
+homepage www.puzzlescript.net
+
+========
+OBJECTS
+========
+
+Background 
+White  
+
+Target 
+Brown GREEN Yellow
+0000.
+11111
+111.1
+111.1
+11111
+
+Wall 
+BROWN
+
+Donut 
+Brown Orange White
+.....
+.11..
+1..1.
+1..1.
+.11..
+
+DonutSprinkled
+Brown Orange White
+.....
+.00..
+0..0.
+0..0.
+.00..
+
+Player
+Red Orange White 
+101..
+221.1
+1111.
+.1.1.
+.0.0.
+
+CocoaSprinkler
+Grey Black
+.1111
+.0101
+.1010
+.0101
+.1010
+
+=======
+LEGEND
+=======
+
+. = Background
+# = Wall
+P = Player
+* = Donut
+@ = Donut and Target
+O = Target
+S = CocoaSprinkler
+
+=======
+SOUNDS
+=======
+
+player move  up 41234
+Player Move  down 41234
+Player Move  right 41234
+Player Move  left 41234
+Player CantMove up 66666
+Donut Move 412312
+CocoaSprinkler Move 41234
+DonutSprinkled Create 41234123
+CloseMessage 1241234
+Sfx0 213424
+Sfx3 213424
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Target
+Player, Wall, Donut, CocoaSprinkler, DonutSprinkled
+
+======
+RULES     
+======     
+
+[ >  Player | Donut ] -> [  >  Player | > Donut ]
+[ >  Player | CocoaSprinkler ] -> [  >  Player | > CocoaSprinkler ]
+[ >  CocoaSprinkler | Donut ] -> [ CocoaSprinkler | DonutSprinkled ]
+[ >  Player | DonutSprinkled ] -> [  >  Player | > DonutSprinkled ]
+
+==============
+WINCONDITIONS
+==============
+
+All Target on DonutSprinkled     
+
+=======     
+LEVELS
+=======
+
+#########
+#.......#
+#..S..O.#
+#.P.....#
+#.*.*...#
+#....O..#
+#########
+
+#########
+#.......#
+#..*..S.#
+#.P.....#
+#...*...#
+#..O..O.#
+#########
+
+#########
+#....O..#
+#.....*.#
+#.P.....#
+#.S.*...#
+#..O....#
+#########
+
+#########
+#O......#
+#..*..S.#
+#.P.....#
+#..*....#
+#O......#
+#########
